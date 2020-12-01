@@ -46,7 +46,6 @@ struct IntroView: View {
         }
         .padding()
         .onReceive(viewModel.$isNextButtonPressed, perform: { _ in
-            #warning("TODO - logic of screen change")
             
         })
     }
