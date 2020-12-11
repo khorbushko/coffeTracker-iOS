@@ -51,3 +51,11 @@ struct ActivityView: View {
         }
     }
 }
+
+struct ActivityView_Previews: PreviewProvider {
+    static var previews: some View {
+        ActivityView()
+            .frame(width: 100, height:100)
+            .foregroundColor(.blue)
+    }
+}

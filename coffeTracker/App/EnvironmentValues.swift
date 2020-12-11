@@ -18,3 +18,10 @@ extension EnvironmentValues {
         set { self[HealthKitManagerKey.self] = newValue }
     }
 }
+
+// MARK: - AccessPoint
+
+struct EnvironmentValueStorage {
+    
+    @Environment(\.healthKitService) var healthStore
+}

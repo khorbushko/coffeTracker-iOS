@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10A043A258398A500997744 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A0439258398A500997744 /* BottomSheetView.swift */; };
+		F10A044625839C9D00997744 /* View+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A044525839C9D00997744 /* View+RoundedCorners.swift */; };
+		F10A044E2583A57500997744 /* RootContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A044D2583A57500997744 /* RootContainerViewModel.swift */; };
+		F10A04592583B4CE00997744 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A04582583B4CD00997744 /* LoadingButton.swift */; };
+		F10A04622583C70100997744 /* Checkmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A04612583C70100997744 /* Checkmark.swift */; };
+		F10A046A2583CCB100997744 /* Color+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A04692583CCB100997744 /* Color+Create.swift */; };
+		F10A04712583CCF300997744 /* Color+CreateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A04702583CCF200997744 /* Color+CreateTests.swift */; };
+		F10A04792583D0B000997744 /* Crossmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A04782583D0B000997744 /* Crossmark.swift */; };
 		F10CB4D8256FE61E005FA2D9 /* CoffeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10CB4D7256FE61E005FA2D9 /* CoffeApp.swift */; };
 		F10CB4DA256FE61E005FA2D9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10CB4D9256FE61E005FA2D9 /* HomeView.swift */; };
 		F10CB4DC256FE621005FA2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10CB4DB256FE621005FA2D9 /* Assets.xcassets */; };
@@ -44,6 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F10A0439258398A500997744 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		F10A044525839C9D00997744 /* View+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedCorners.swift"; sourceTree = "<group>"; };
+		F10A044D2583A57500997744 /* RootContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainerViewModel.swift; sourceTree = "<group>"; };
+		F10A04582583B4CD00997744 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		F10A04612583C70100997744 /* Checkmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkmark.swift; sourceTree = "<group>"; };
+		F10A04692583CCB100997744 /* Color+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Create.swift"; sourceTree = "<group>"; };
+		F10A04702583CCF200997744 /* Color+CreateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CreateTests.swift"; sourceTree = "<group>"; };
+		F10A04782583D0B000997744 /* Crossmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crossmark.swift; sourceTree = "<group>"; };
 		F10CB4D4256FE61E005FA2D9 /* coffeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10CB4D7256FE61E005FA2D9 /* CoffeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeApp.swift; sourceTree = "<group>"; };
 		F10CB4D9256FE61E005FA2D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -96,6 +112,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F10A04362583988D00997744 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F10A044425839C9000997744 /* Extensions */,
+				F10A04602583C6F800997744 /* Shape */,
+				F10A04372583989300997744 /* View */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F10A04372583989300997744 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1EEAC332576BA3B0098ED69 /* ActivityView.swift */,
+				F10A0439258398A500997744 /* BottomSheetView.swift */,
+				F10A04582583B4CD00997744 /* LoadingButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F10A044425839C9000997744 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F10A044525839C9D00997744 /* View+RoundedCorners.swift */,
+				F10A04692583CCB100997744 /* Color+Create.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F10A04602583C6F800997744 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				F10A04612583C70100997744 /* Checkmark.swift */,
+				F10A04782583D0B000997744 /* Crossmark.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
+		F10A046E2583CCE000997744 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F10A046F2583CCE500997744 /* Extensions */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F10A046F2583CCE500997744 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F10A04702583CCF200997744 /* Color+CreateTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F10CB4CB256FE61D005FA2D9 = {
 			isa = PBXGroup;
 			children = (
@@ -177,13 +247,12 @@
 		F10CB516256FE6DD005FA2D9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F10A04362583988D00997744 /* Shared */,
 				F1EEAC3B2576C35B0098ED69 /* RootContainerView */,
 				F1EEAB422574E5600098ED69 /* Introduction */,
 				F1EEAB592574EE550098ED69 /* TabView */,
 				F1EEAB622574EE800098ED69 /* Home */,
 				F1EEAB632574EE840098ED69 /* Settings */,
-				F1EEAC2725769C440098ED69 /* RootContainerView.swift */,
-				F1EEAC332576BA3B0098ED69 /* ActivityView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -234,6 +303,7 @@
 		F1EEAB772574F0700098ED69 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F10A046E2583CCE000997744 /* Shared */,
 				F1EEAB782574F0780098ED69 /* Introduction */,
 			);
 			path = Modules;
@@ -266,6 +336,8 @@
 		F1EEAC3B2576C35B0098ED69 /* RootContainerView */ = {
 			isa = PBXGroup;
 			children = (
+				F10A044D2583A57500997744 /* RootContainerViewModel.swift */,
+				F1EEAC2725769C440098ED69 /* RootContainerView.swift */,
 			);
 			path = RootContainerView;
 			sourceTree = "<group>";
@@ -401,10 +473,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EEAB682574EEA90098ED69 /* SettingsView.swift in Sources */,
+				F10A046A2583CCB100997744 /* Color+Create.swift in Sources */,
+				F10A044E2583A57500997744 /* RootContainerViewModel.swift in Sources */,
+				F10A044625839C9D00997744 /* View+RoundedCorners.swift in Sources */,
 				F10CB4DA256FE61E005FA2D9 /* HomeView.swift in Sources */,
 				F10CB4D8256FE61E005FA2D9 /* CoffeApp.swift in Sources */,
 				F1EEAB4D2574E6AE0098ED69 /* ViewStyle.swift in Sources */,
+				F10A04622583C70100997744 /* Checkmark.swift in Sources */,
 				F1EEAB522574E6DB0098ED69 /* Pallete.swift in Sources */,
+				F10A043A258398A500997744 /* BottomSheetView.swift in Sources */,
 				F1EEAC342576BA3B0098ED69 /* ActivityView.swift in Sources */,
 				F1EEAB922574F2B60098ED69 /* EnvironmentValues.swift in Sources */,
 				F1EEAB5B2574EE5D0098ED69 /* TabbarView.swift in Sources */,
@@ -412,6 +489,8 @@
 				F1EEAB702574F0520098ED69 /* IntroViewModel.swift in Sources */,
 				F1EEAC2825769C440098ED69 /* RootContainerView.swift in Sources */,
 				F1EEAB8A2574F29E0098ED69 /* HealthKitManager.swift in Sources */,
+				F10A04792583D0B000997744 /* Crossmark.swift in Sources */,
+				F10A04592583B4CE00997744 /* LoadingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EEAB7B2574F0A90098ED69 /* IntroViewModelTests.swift in Sources */,
+				F10A04712583CCF300997744 /* Color+CreateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,5 +46,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>This application require access to your health records in order to store consumed drinks</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>This application require access to your health records in order to analyze consumed drinks</string>
 </dict>
 </plist>

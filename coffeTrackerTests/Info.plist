@@ -18,5 +18,7 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>This application require access to your health records in order to analyze  and store consumed drinks</string>
 </dict>
 </plist>

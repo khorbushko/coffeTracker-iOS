@@ -11,8 +11,8 @@ import HealthKit
 
 enum Health {
     enum AccessState {
-        case granted
-        case denied
+        case proceed
+        case failed
         case unavailable
         case undefined
     }
@@ -36,7 +36,17 @@ final class HealthKitManager: HealthKitService {
 
     private let healthStore = HKHealthStore()
     
-    private var allTypes: Set<HKQuantityType> {
+    private var writeTypes: Set<HKQuantityType> {
+        Set(
+            [
+                HKObjectType.quantityType(forIdentifier: .dietaryCaffeine),
+                HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)
+            ]
+            .compactMap({ $0 })
+        )
+    }
+    
+    private var readTypes: Set<HKQuantityType> {
         Set(
             [
                 HKObjectType.quantityType(forIdentifier: .bodyMass),
@@ -51,23 +61,26 @@ final class HealthKitManager: HealthKitService {
     func shouldAskDataAccess() -> AnyPublisher<Bool, Never> {
         Deferred {
             Future { promise in
-//                if HKHealthStore.isHealthDataAvailable() {
-//                    promise(.success(false))
-//                } else {
-                    self.healthStore.getRequestStatusForAuthorization(
-                        toShare: self.allTypes,
-                        read: self.allTypes) { (status, error) in
-                        switch status {
-                        case .unknown,
-                             .shouldRequest:
-                            promise(.success(true))
-                        case .unnecessary:
-                            promise(.success(false))
-                        @unknown default:
-                            promise(.success(false))
-                        }
+                #if !targetEnvironment(simulator)
+                if HKHealthStore.isHealthDataAvailable() {
+                    promise(.success(false))
+                    return
+                }
+                #endif
+                
+                self.healthStore.getRequestStatusForAuthorization(
+                    toShare: self.writeTypes,
+                    read: self.readTypes) { (status, error) in
+                    switch status {
+                    case .unknown,
+                         .shouldRequest:
+                        promise(.success(true))
+                    case .unnecessary:
+                        promise(.success(false))
+                    @unknown default:
+                        promise(.success(false))
                     }
-//                }
+                }
             }
         }
         .receive(on: DispatchQueue.main)
@@ -78,21 +91,23 @@ final class HealthKitManager: HealthKitService {
         Deferred {
             Future { promise in
                 
+                #if !targetEnvironment(simulator)
                 if HKHealthStore.isHealthDataAvailable() {
                     promise(.success(.unavailable))
-                } else {
-                    self.healthStore.requestAuthorization(
-                        toShare: self.allTypes,
-                        read: self.allTypes
-                    ) { (success, error) in
-                        if success {
-                            promise(.success(.granted))
-                        } else {
-                            promise(.success(.denied))
-                        }
+                    return
+                }
+                #endif
+                
+                self.healthStore.requestAuthorization(
+                    toShare: self.writeTypes,
+                    read: self.readTypes
+                ) { (success, error) in
+                    if success {
+                        promise(.success(.proceed))
+                    } else {
+                        promise(.success(.failed))
                     }
                 }
-                
             }
         }
         .eraseToAnyPublisher()
