@@ -24,4 +24,44 @@ final class CheckMarkSnapshotTests: XCTestCase {
             as: .image
         )
     }
+    
+    func testDefaultAppearenceLTR() {
+        assertSnapshot(
+            matching:
+                Checkmark()
+                .frame(width: referenceSize.width, height: referenceSize.height)
+                .environment(\.layoutDirection, .leftToRight),
+            as: .image
+        )
+    }
+    
+    func testDefaultAppearenceRTL() {
+        assertSnapshot(
+            matching:
+                Checkmark()
+                .frame(width: referenceSize.width, height: referenceSize.height)
+                .environment(\.layoutDirection, .rightToLeft),
+            as: .image
+        )
+    }
+    
+    func testDefaultAppearenceColorSchemeLight() {
+        assertSnapshot(
+            matching:
+                Checkmark()
+                .frame(width: referenceSize.width, height: referenceSize.height)
+                .environment(\.colorScheme, .light),
+            as: .image
+        )
+    }
+    
+    func testDefaultAppearenceColorSchemeDark() {
+        assertSnapshot(
+            matching:
+                Checkmark()
+                .frame(width: referenceSize.width, height: referenceSize.height)
+                .environment(\.colorScheme, .dark),
+            as: .image
+        )
+    }
 }
