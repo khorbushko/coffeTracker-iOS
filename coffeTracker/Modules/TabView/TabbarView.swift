@@ -22,22 +22,25 @@ struct TabbarView: View {
             .safeAreaInsets ?? .zero
     }
     
+    private var activeTabBarTint: Color = Pallete.brown
+    private var inactiveTabBarTint: Color = Pallete.utilityGray
+
     private var buttons: [BottomBar.ButtonItem] {
         [
             BottomBar.ButtonItem(
                 id: 0,
                 image: Image(systemName: "pencil.and.outline"),
                 text: Text("Home"),
-                activeTint: Pallete.blue,
-                inActiveTint: Pallete.black,
+                activeTint: activeTabBarTint,
+                inActiveTint: inactiveTabBarTint,
                 activeIndex: $selectedIndex
             ),
             BottomBar.ButtonItem(
                 id: 1,
                 image: Image(systemName: "gear"),
                 text: Text("Settings"),
-                activeTint: Pallete.blue,
-                inActiveTint: Pallete.black,
+                activeTint: activeTabBarTint,
+                inActiveTint: inactiveTabBarTint,
                 activeIndex: $selectedIndex
             )
         ]

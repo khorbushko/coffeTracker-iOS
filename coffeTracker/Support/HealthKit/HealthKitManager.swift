@@ -19,20 +19,12 @@ enum Health {
 }
 
 protocol HealthKitService {
-    
-    var isAccessGranted: Published<Bool>.Publisher { get }
-    
+        
     func shouldAskDataAccess() -> AnyPublisher<Bool, Never>
     func requestDataAccess() -> AnyPublisher<Health.AccessState, Never>
 }
 
 final class HealthKitManager: HealthKitService {
-        
-    var isAccessGranted: Published<Bool>.Publisher {
-        $_isAccessGranted
-    }
-    
-    @Published private var _isAccessGranted: Bool = false
 
     private let healthStore = HKHealthStore()
     

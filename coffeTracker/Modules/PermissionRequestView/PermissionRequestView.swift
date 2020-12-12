@@ -9,17 +9,17 @@ import Foundation
 import SwiftUI
 import Combine
 
-struct IntroView: View {
+struct PermissionRequestView: View {
     @Binding var isShown: Bool
     @Namespace private var introNamespace
-    @ObservedObject private var viewModel: IntroViewModel
+    @ObservedObject private var viewModel: PermissionRequestViewModel
     @State private var checkMarkPathVisibilityAmount: CGFloat = 0
     @State private var crossMarkPathVisibilityAmount: CGFloat = 0
 
     init(isShown: Binding<Bool>) {
         _isShown = isShown
         let storage = EnvironmentValueStorage()
-        viewModel = IntroViewModel(healthStore: storage.healthStore)
+        viewModel = PermissionRequestViewModel(healthStore: storage.healthStore)
     }
     
     @ViewBuilder
@@ -46,36 +46,26 @@ struct IntroView: View {
         Spacer()
     }
     
-    @ViewBuilder
-    private var bottomButtons: some View {
+    private var bottomButton: some View {
         LoadingButton(
             loading: .constant(viewModel.state == .requested),
             foregroundColor: Pallete.white,
-            backgroundColor: Pallete.blue,
+            backgroundColor: Pallete.brown,
             action: {
-                viewModel.perform(.next)
+                if viewModel.state.isResponseReceived {
+                    isShown = false
+                } else {
+                    viewModel.perform(.next)
+                }
             },
-            label: Text("Next")
+            label: Text(
+                viewModel.state.isResponseReceived ?
+                    "Let me drink the coffee!" :
+                    "Next"
+            )
         )
-        .opacity(viewModel.state.isResponseReceived ? 0 : 1)
-        .matchedGeometryEffect(
-            id: viewModel.state.isResponseReceived ? "bottomButton" : "n/a",
-            in: introNamespace
-        )
-        
-        LoadingButton(
-            loading: .constant(false),
-            foregroundColor: Pallete.white,
-            backgroundColor: Pallete.blue,
-            action: {
-                isShown = false
-            },
-            label: Text("Let me drink the coffee!")
-        )
-        .opacity(viewModel.state.isResponseReceived ? 1 : 0)
-        .matchedGeometryEffect(id: "bottomButton", in: introNamespace)
     }
-    
+
     private var checkmark: some View {
         VStack {
             Checkmark()
@@ -147,7 +137,7 @@ struct IntroView: View {
                     
                     Spacer()
                     ZStack {
-                        bottomButtons
+                        bottomButton
                     }
                     .animation(.easeOut)
                 }
@@ -172,6 +162,6 @@ struct IntroView: View {
 
 struct IntroView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroView(isShown: .constant(true))
+        PermissionRequestView(isShown: .constant(true))
     }
 }

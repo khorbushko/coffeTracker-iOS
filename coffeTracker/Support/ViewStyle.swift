@@ -20,10 +20,10 @@ enum ViewStyle {
                     .font(.system(size: 17, weight: .semibold))
                     .padding()
                     .foregroundColor(Pallete.white)
-                    .background(Pallete.blue)
+                    .background(Pallete.brown)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Pallete.blue, lineWidth: 2)
+                            .stroke(Pallete.brown, lineWidth: 2)
                     )
                     .cornerRadius(8)
                     .frame(height: 50)

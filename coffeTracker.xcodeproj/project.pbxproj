@@ -20,13 +20,14 @@
 		F10CB4DC256FE621005FA2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10CB4DB256FE621005FA2D9 /* Assets.xcassets */; };
 		F10CB4DF256FE621005FA2D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10CB4DE256FE621005FA2D9 /* Preview Assets.xcassets */; };
 		F10CB4F5256FE621005FA2D9 /* coffeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10CB4F4256FE621005FA2D9 /* coffeTrackerUITests.swift */; };
-		F1EEAB442574E56E0098ED69 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB432574E56E0098ED69 /* IntroView.swift */; };
+		F198ADCB2584B0FF00C244E1 /* FakeHealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */; };
+		F198ADE12584E98A00C244E1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */; };
+		F1EEAB442574E56E0098ED69 /* PermissionRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB432574E56E0098ED69 /* PermissionRequestView.swift */; };
 		F1EEAB4D2574E6AE0098ED69 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB4C2574E6AE0098ED69 /* ViewStyle.swift */; };
 		F1EEAB522574E6DB0098ED69 /* Pallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB512574E6DB0098ED69 /* Pallete.swift */; };
 		F1EEAB5B2574EE5D0098ED69 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB5A2574EE5C0098ED69 /* TabbarView.swift */; };
 		F1EEAB682574EEA90098ED69 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB672574EEA90098ED69 /* SettingsView.swift */; };
-		F1EEAB702574F0520098ED69 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB6F2574F0520098ED69 /* IntroViewModel.swift */; };
-		F1EEAB7B2574F0A90098ED69 /* IntroViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB7A2574F0A90098ED69 /* IntroViewModelTests.swift */; };
+		F1EEAB702574F0520098ED69 /* PermissionRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB6F2574F0520098ED69 /* PermissionRequestViewModel.swift */; };
 		F1EEAB8A2574F29E0098ED69 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB892574F29E0098ED69 /* HealthKitManager.swift */; };
 		F1EEAB922574F2B60098ED69 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB912574F2B60098ED69 /* EnvironmentValues.swift */; };
 		F1EEAC2825769C440098ED69 /* RootContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAC2725769C440098ED69 /* RootContainerView.swift */; };
@@ -71,13 +72,14 @@
 		F10CB4F0256FE621005FA2D9 /* coffeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coffeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10CB4F4256FE621005FA2D9 /* coffeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffeTrackerUITests.swift; sourceTree = "<group>"; };
 		F10CB4F6256FE621005FA2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1EEAB432574E56E0098ED69 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHealthKitService.swift; sourceTree = "<group>"; };
+		F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F1EEAB432574E56E0098ED69 /* PermissionRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRequestView.swift; sourceTree = "<group>"; };
 		F1EEAB4C2574E6AE0098ED69 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		F1EEAB512574E6DB0098ED69 /* Pallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pallete.swift; sourceTree = "<group>"; };
 		F1EEAB5A2574EE5C0098ED69 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		F1EEAB672574EEA90098ED69 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		F1EEAB6F2574F0520098ED69 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
-		F1EEAB7A2574F0A90098ED69 /* IntroViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModelTests.swift; sourceTree = "<group>"; };
+		F1EEAB6F2574F0520098ED69 /* PermissionRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRequestViewModel.swift; sourceTree = "<group>"; };
 		F1EEAB892574F29E0098ED69 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		F1EEAB912574F2B60098ED69 /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
 		F1EEAC2725769C440098ED69 /* RootContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainerView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		F10CB4E8256FE621005FA2D9 /* coffeTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				F198ADC82584B0DC00C244E1 /* Support */,
 				F1EEAB772574F0700098ED69 /* Modules */,
 				F10CB4EB256FE621005FA2D9 /* Info.plist */,
 			);
@@ -240,6 +243,7 @@
 			children = (
 				F10CB4E0256FE621005FA2D9 /* Info.plist */,
 				F10CB4DB256FE621005FA2D9 /* Assets.xcassets */,
+				F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -249,21 +253,37 @@
 			children = (
 				F10A04362583988D00997744 /* Shared */,
 				F1EEAC3B2576C35B0098ED69 /* RootContainerView */,
-				F1EEAB422574E5600098ED69 /* Introduction */,
 				F1EEAB592574EE550098ED69 /* TabView */,
+				F1EEAB422574E5600098ED69 /* PermissionRequestView */,
 				F1EEAB622574EE800098ED69 /* Home */,
 				F1EEAB632574EE840098ED69 /* Settings */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		F1EEAB422574E5600098ED69 /* Introduction */ = {
+		F198ADC82584B0DC00C244E1 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				F1EEAB6F2574F0520098ED69 /* IntroViewModel.swift */,
-				F1EEAB432574E56E0098ED69 /* IntroView.swift */,
+				F198ADC92584B0E700C244E1 /* Fake */,
 			);
-			path = Introduction;
+			path = Support;
+			sourceTree = "<group>";
+		};
+		F198ADC92584B0E700C244E1 /* Fake */ = {
+			isa = PBXGroup;
+			children = (
+				F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */,
+			);
+			path = Fake;
+			sourceTree = "<group>";
+		};
+		F1EEAB422574E5600098ED69 /* PermissionRequestView */ = {
+			isa = PBXGroup;
+			children = (
+				F1EEAB6F2574F0520098ED69 /* PermissionRequestViewModel.swift */,
+				F1EEAB432574E56E0098ED69 /* PermissionRequestView.swift */,
+			);
+			path = PermissionRequestView;
 			sourceTree = "<group>";
 		};
 		F1EEAB4B2574E6A40098ED69 /* Support */ = {
@@ -304,17 +324,8 @@
 			isa = PBXGroup;
 			children = (
 				F10A046E2583CCE000997744 /* Shared */,
-				F1EEAB782574F0780098ED69 /* Introduction */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		F1EEAB782574F0780098ED69 /* Introduction */ = {
-			isa = PBXGroup;
-			children = (
-				F1EEAB7A2574F0A90098ED69 /* IntroViewModelTests.swift */,
-			);
-			path = Introduction;
 			sourceTree = "<group>";
 		};
 		F1EEAB882574F28E0098ED69 /* HealthKit */ = {
@@ -446,6 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F198ADE12584E98A00C244E1 /* Launch Screen.storyboard in Resources */,
 				F10CB4DF256FE621005FA2D9 /* Preview Assets.xcassets in Resources */,
 				F10CB4DC256FE621005FA2D9 /* Assets.xcassets in Resources */,
 			);
@@ -485,8 +497,8 @@
 				F1EEAC342576BA3B0098ED69 /* ActivityView.swift in Sources */,
 				F1EEAB922574F2B60098ED69 /* EnvironmentValues.swift in Sources */,
 				F1EEAB5B2574EE5D0098ED69 /* TabbarView.swift in Sources */,
-				F1EEAB442574E56E0098ED69 /* IntroView.swift in Sources */,
-				F1EEAB702574F0520098ED69 /* IntroViewModel.swift in Sources */,
+				F1EEAB442574E56E0098ED69 /* PermissionRequestView.swift in Sources */,
+				F1EEAB702574F0520098ED69 /* PermissionRequestViewModel.swift in Sources */,
 				F1EEAC2825769C440098ED69 /* RootContainerView.swift in Sources */,
 				F1EEAB8A2574F29E0098ED69 /* HealthKitManager.swift in Sources */,
 				F10A04792583D0B000997744 /* Crossmark.swift in Sources */,
@@ -498,8 +510,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1EEAB7B2574F0A90098ED69 /* IntroViewModelTests.swift in Sources */,
 				F10A04712583CCF300997744 /* Color+CreateTests.swift in Sources */,
+				F198ADCB2584B0FF00C244E1 /* FakeHealthKitService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,7 +673,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coffeTracker.coffeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -683,7 +695,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coffeTracker.coffeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

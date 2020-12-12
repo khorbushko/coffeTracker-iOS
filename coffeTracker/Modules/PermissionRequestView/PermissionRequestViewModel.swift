@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class IntroViewModel: ObservableObject {
+final class PermissionRequestViewModel: ObservableObject {
     typealias PermissionRequested = Bool
         
     enum State: Equatable {

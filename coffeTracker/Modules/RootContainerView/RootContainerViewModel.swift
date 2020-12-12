@@ -16,11 +16,13 @@ final class RootContainerViewModel: ObservableObject {
     
     init(healthStore: HealthKitService) {
         self.healthStore = healthStore
-        
-        configureSubscription()
     }
     
-    private func configureSubscription() {
+    func checkAppleHealthRequest() {
+        configureSubscriptionForAppleHelathRequest()
+    }
+    
+    private func configureSubscriptionForAppleHelathRequest() {
         healthStore.shouldAskDataAccess()
             .sink { (value) in
                 self.shouldAskPermission = value
