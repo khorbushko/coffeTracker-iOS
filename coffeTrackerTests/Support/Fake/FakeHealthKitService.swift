@@ -23,10 +23,13 @@ final class FakeHealthKitService: HealthKitService {
     }
     
     var requestResponse: Health.AccessState = .proceed
+    var disableResponseForDataAccess: Bool = false
     func requestDataAccess() -> AnyPublisher<Health.AccessState, Never> {
         Deferred {
             Future { promice in
-                promice(.success(self.requestResponse))
+                if !self.disableResponseForDataAccess {
+                    promice(.success(self.requestResponse))
+                }
             }
         }
         .eraseToAnyPublisher()

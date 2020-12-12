@@ -13,21 +13,26 @@ enum ViewStyle {
     enum Button {
         
         struct PrimaryStyle: ButtonStyle {
+            
+            let foregroundColor: Color = Pallete.white
+            let backgroundColor: Color = Pallete.brown
+            
             func makeBody(configuration: Configuration) -> some View {
                 configuration
                     .label
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .font(.system(size: 17, weight: .semibold))
                     .padding()
-                    .foregroundColor(Pallete.white)
-                    .background(Pallete.brown)
+                    .foregroundColor(foregroundColor)
+                    .background(backgroundColor)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Pallete.brown, lineWidth: 2)
+                            .stroke(backgroundColor, lineWidth: 2)
                     )
                     .cornerRadius(8)
                     .frame(height: 50)
-                    .opacity(configuration.isPressed ? 0.7 : 1.0)
+                    .opacity(configuration.isPressed ? 0.95 : 1.0)
+                    .animation(.easeIn)
             }
         }
     }

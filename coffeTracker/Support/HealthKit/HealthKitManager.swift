@@ -10,7 +10,7 @@ import Combine
 import HealthKit
 
 enum Health {
-    enum AccessState {
+    enum AccessState: CaseIterable {
         case proceed
         case failed
         case unavailable

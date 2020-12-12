@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,13 @@
 		F10CB4F5256FE621005FA2D9 /* coffeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10CB4F4256FE621005FA2D9 /* coffeTrackerUITests.swift */; };
 		F198ADCB2584B0FF00C244E1 /* FakeHealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */; };
 		F198ADE12584E98A00C244E1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */; };
+		F198ADF62585145500C244E1 /* PermissionRequestViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */; };
+		F198ADFF25851D6A00C244E1 /* RootContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADFE25851D6A00C244E1 /* RootContainerViewModel.swift */; };
+		F198AE3425852B6D00C244E1 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = F198AE3325852B6D00C244E1 /* SnapshotTesting */; };
+		F198AE4F25852BCD00C244E1 /* CheckMarkSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198AE4D25852BCD00C244E1 /* CheckMarkSnapshotTests.swift */; };
+		F198AE5725852C0F00C244E1 /* CrossMarkSnapshotTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198AE5625852C0F00C244E1 /* CrossMarkSnapshotTest.swift */; };
+		F198AE6725852CBD00C244E1 /* ActivityViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198AE6625852CBD00C244E1 /* ActivityViewSnapshotTests.swift */; };
+		F198AE6F25852D3100C244E1 /* LoadingButtonSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198AE6E25852D3100C244E1 /* LoadingButtonSnapshotTests.swift */; };
 		F1EEAB442574E56E0098ED69 /* PermissionRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB432574E56E0098ED69 /* PermissionRequestView.swift */; };
 		F1EEAB4D2574E6AE0098ED69 /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB4C2574E6AE0098ED69 /* ViewStyle.swift */; };
 		F1EEAB522574E6DB0098ED69 /* Pallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EEAB512574E6DB0098ED69 /* Pallete.swift */; };
@@ -74,6 +81,12 @@
 		F10CB4F6256FE621005FA2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHealthKitService.swift; sourceTree = "<group>"; };
 		F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRequestViewModelTests.swift; sourceTree = "<group>"; };
+		F198ADFE25851D6A00C244E1 /* RootContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootContainerViewModel.swift; sourceTree = "<group>"; };
+		F198AE4D25852BCD00C244E1 /* CheckMarkSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckMarkSnapshotTests.swift; sourceTree = "<group>"; };
+		F198AE5625852C0F00C244E1 /* CrossMarkSnapshotTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossMarkSnapshotTest.swift; sourceTree = "<group>"; };
+		F198AE6625852CBD00C244E1 /* ActivityViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewSnapshotTests.swift; sourceTree = "<group>"; };
+		F198AE6E25852D3100C244E1 /* LoadingButtonSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonSnapshotTests.swift; sourceTree = "<group>"; };
 		F1EEAB432574E56E0098ED69 /* PermissionRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRequestView.swift; sourceTree = "<group>"; };
 		F1EEAB4C2574E6AE0098ED69 /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		F1EEAB512574E6DB0098ED69 /* Pallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pallete.swift; sourceTree = "<group>"; };
@@ -101,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F198AE3425852B6D00C244E1 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +169,9 @@
 		F10A046E2583CCE000997744 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F198AE6525852CA600C244E1 /* View */,
 				F10A046F2583CCE500997744 /* Extensions */,
+				F198AE4C25852BCD00C244E1 /* Shape */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -223,6 +239,7 @@
 		F10CB4F3256FE621005FA2D9 /* coffeTrackerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				F198AE122585230F00C244E1 /* Modules */,
 				F10CB4F4256FE621005FA2D9 /* coffeTrackerUITests.swift */,
 				F10CB4F6256FE621005FA2D9 /* Info.plist */,
 			);
@@ -277,6 +294,55 @@
 			path = Fake;
 			sourceTree = "<group>";
 		};
+		F198ADF42585144200C244E1 /* PermissionRequestView */ = {
+			isa = PBXGroup;
+			children = (
+				F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */,
+			);
+			path = PermissionRequestView;
+			sourceTree = "<group>";
+		};
+		F198ADFD25851D6100C244E1 /* RootContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				F198ADFE25851D6A00C244E1 /* RootContainerViewModel.swift */,
+			);
+			path = RootContainerView;
+			sourceTree = "<group>";
+		};
+		F198AE122585230F00C244E1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F198AE132585231B00C244E1 /* Shared */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F198AE132585231B00C244E1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F198AE4C25852BCD00C244E1 /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				F198AE4D25852BCD00C244E1 /* CheckMarkSnapshotTests.swift */,
+				F198AE5625852C0F00C244E1 /* CrossMarkSnapshotTest.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
+		F198AE6525852CA600C244E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F198AE6625852CBD00C244E1 /* ActivityViewSnapshotTests.swift */,
+				F198AE6E25852D3100C244E1 /* LoadingButtonSnapshotTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F1EEAB422574E5600098ED69 /* PermissionRequestView */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				F10A046E2583CCE000997744 /* Shared */,
+				F198ADFD25851D6100C244E1 /* RootContainerView */,
+				F198ADF42585144200C244E1 /* PermissionRequestView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -369,6 +437,8 @@
 			dependencies = (
 			);
 			name = coffeTracker;
+			packageProductDependencies = (
+			);
 			productName = coffeTracker;
 			productReference = F10CB4D4256FE61E005FA2D9 /* coffeTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -387,6 +457,9 @@
 				F10CB4E7256FE621005FA2D9 /* PBXTargetDependency */,
 			);
 			name = coffeTrackerTests;
+			packageProductDependencies = (
+				F198AE3325852B6D00C244E1 /* SnapshotTesting */,
+			);
 			productName = coffeTrackerTests;
 			productReference = F10CB4E5256FE621005FA2D9 /* coffeTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -405,6 +478,8 @@
 				F10CB4F2256FE621005FA2D9 /* PBXTargetDependency */,
 			);
 			name = coffeTrackerUITests;
+			packageProductDependencies = (
+			);
 			productName = coffeTrackerUITests;
 			productReference = F10CB4F0256FE621005FA2D9 /* coffeTrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -441,6 +516,9 @@
 				Base,
 			);
 			mainGroup = F10CB4CB256FE61D005FA2D9;
+			packageReferences = (
+				F198AE3225852B6D00C244E1 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = F10CB4D5256FE61E005FA2D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -510,8 +588,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F198AE6F25852D3100C244E1 /* LoadingButtonSnapshotTests.swift in Sources */,
 				F10A04712583CCF300997744 /* Color+CreateTests.swift in Sources */,
 				F198ADCB2584B0FF00C244E1 /* FakeHealthKitService.swift in Sources */,
+				F198ADFF25851D6A00C244E1 /* RootContainerViewModel.swift in Sources */,
+				F198AE6725852CBD00C244E1 /* ActivityViewSnapshotTests.swift in Sources */,
+				F198AE5725852C0F00C244E1 /* CrossMarkSnapshotTest.swift in Sources */,
+				F198ADF62585145500C244E1 /* PermissionRequestViewModelTests.swift in Sources */,
+				F198AE4F25852BCD00C244E1 /* CheckMarkSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +843,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coffeTracker.coffeTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = coffeTracker;
@@ -778,6 +863,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coffeTracker.coffeTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = coffeTracker;
@@ -824,6 +910,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F198AE3225852B6D00C244E1 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F198AE3325852B6D00C244E1 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F198AE3225852B6D00C244E1 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F10CB4CC256FE61D005FA2D9 /* Project object */;
 }
