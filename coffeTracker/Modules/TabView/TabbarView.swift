@@ -51,10 +51,8 @@ struct TabbarView: View {
         switch selectedIndex {
         case 0:
             HomeView()
-                .accessibility(identifier: "tabBarHome")
         case 1:
-            SettingsView()
-                .accessibility(identifier: "tabBarSettings")
+            SettingsView(storage: UserDefaults.standard)
         default:
             fatalError("unconfigured view for tabBar")
         }

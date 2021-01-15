@@ -38,6 +38,13 @@
 		F16B2B61258A20C60067F727 /* predefinedDrinks.json in Resources */ = {isa = PBXBuildFile; fileRef = F16B2B60258A20C60067F727 /* predefinedDrinks.json */; };
 		F170499B25B17BAB0039D3C6 /* DelayedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170499A25B17BAB0039D3C6 /* DelayedAnimation.swift */; };
 		F17049A125B1B06B0039D3C6 /* AnimationCompletionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049A025B1B06B0039D3C6 /* AnimationCompletionModifier.swift */; };
+		F17049A925B1C5E40039D3C6 /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049A825B1C5E40039D3C6 /* SettingsService.swift */; };
+		F17049AE25B1C6130039D3C6 /* UserDefaults+SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049AD25B1C6130039D3C6 /* UserDefaults+SettingsService.swift */; };
+		F17049B425B1C6310039D3C6 /* UserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049B325B1C6310039D3C6 /* UserDefaultValue.swift */; };
+		F17049BC25B1C67F0039D3C6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049BB25B1C67F0039D3C6 /* SettingsViewModel.swift */; };
+		F17049C725B1CD9C0039D3C6 /* View+VibroEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049C625B1CD9C0039D3C6 /* View+VibroEffect.swift */; };
+		F17049CC25B1CED70039D3C6 /* View+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049CB25B1CED70039D3C6 /* View+Settings.swift */; };
+		F17049D125B1CF270039D3C6 /* Settings+EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049D025B1CF270039D3C6 /* Settings+EnvironmentValues.swift */; };
 		F198ADCB2584B0FF00C244E1 /* FakeHealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */; };
 		F198ADE12584E98A00C244E1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */; };
 		F198ADF62585145500C244E1 /* PermissionRequestViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */; };
@@ -115,6 +122,13 @@
 		F16B2B60258A20C60067F727 /* predefinedDrinks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = predefinedDrinks.json; sourceTree = "<group>"; };
 		F170499A25B17BAB0039D3C6 /* DelayedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedAnimation.swift; sourceTree = "<group>"; };
 		F17049A025B1B06B0039D3C6 /* AnimationCompletionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCompletionModifier.swift; sourceTree = "<group>"; };
+		F17049A825B1C5E40039D3C6 /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
+		F17049AD25B1C6130039D3C6 /* UserDefaults+SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+SettingsService.swift"; sourceTree = "<group>"; };
+		F17049B325B1C6310039D3C6 /* UserDefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultValue.swift; sourceTree = "<group>"; };
+		F17049BB25B1C67F0039D3C6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		F17049C625B1CD9C0039D3C6 /* View+VibroEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+VibroEffect.swift"; sourceTree = "<group>"; };
+		F17049CB25B1CED70039D3C6 /* View+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Settings.swift"; sourceTree = "<group>"; };
+		F17049D025B1CF270039D3C6 /* Settings+EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+EnvironmentValues.swift"; sourceTree = "<group>"; };
 		F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHealthKitService.swift; sourceTree = "<group>"; };
 		F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRequestViewModelTests.swift; sourceTree = "<group>"; };
@@ -167,6 +181,7 @@
 		F10A04362583988D00997744 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F17049B225B1C6260039D3C6 /* PropertyWrappers */,
 				F16A8B2A25A8F53500C71C1A /* Styles */,
 				F16A8B1425A8E60F00C71C1A /* Debug */,
 				F10A044425839C9000997744 /* Extensions */,
@@ -193,6 +208,7 @@
 				F10A044525839C9D00997744 /* View+RoundedCorners.swift */,
 				F10A04692583CCB100997744 /* Color+Create.swift */,
 				F16A8AD925A8A87000C71C1A /* KeyedDecodingContainer+Type.swift */,
+				F17049C625B1CD9C0039D3C6 /* View+VibroEffect.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -366,6 +382,14 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
+		F17049B225B1C6260039D3C6 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				F17049B325B1C6310039D3C6 /* UserDefaultValue.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
 		F198ADC82584B0DC00C244E1 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +499,11 @@
 		F1EEAB632574EE840098ED69 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				F17049A825B1C5E40039D3C6 /* SettingsService.swift */,
+				F17049CB25B1CED70039D3C6 /* View+Settings.swift */,
+				F17049D025B1CF270039D3C6 /* Settings+EnvironmentValues.swift */,
+				F17049AD25B1C6130039D3C6 /* UserDefaults+SettingsService.swift */,
+				F17049BB25B1C67F0039D3C6 /* SettingsViewModel.swift */,
 				F1EEAB672574EEA90098ED69 /* SettingsView.swift */,
 			);
 			path = Settings;
@@ -661,6 +690,7 @@
 				F16A8B1E25A8E77A00C71C1A /* Binding+Constant.swift in Sources */,
 				F10A046A2583CCB100997744 /* Color+Create.swift in Sources */,
 				F16A8AD025A8A52C00C71C1A /* CoffeeContainableDrink.swift in Sources */,
+				F17049B425B1C6310039D3C6 /* UserDefaultValue.swift in Sources */,
 				F16A8B1025A8E2F700C71C1A /* DrinkView.swift in Sources */,
 				F10A044E2583A57500997744 /* RootContainerViewModel.swift in Sources */,
 				F10A044625839C9D00997744 /* View+RoundedCorners.swift in Sources */,
@@ -671,20 +701,26 @@
 				F10CB4D8256FE61E005FA2D9 /* CoffeApp.swift in Sources */,
 				F1EEAB4D2574E6AE0098ED69 /* ViewStyle.swift in Sources */,
 				F16A8B0825A8E2CE00C71C1A /* ExchangeFavouriteDrinkView.swift in Sources */,
+				F17049BC25B1C67F0039D3C6 /* SettingsViewModel.swift in Sources */,
 				F10A04622583C70100997744 /* Checkmark.swift in Sources */,
 				F1EEAB522574E6DB0098ED69 /* Pallete.swift in Sources */,
 				F10A043A258398A500997744 /* BottomSheetView.swift in Sources */,
 				F1EEAC342576BA3B0098ED69 /* ActivityView.swift in Sources */,
+				F17049A925B1C5E40039D3C6 /* SettingsService.swift in Sources */,
 				F1EEAB922574F2B60098ED69 /* EnvironmentValues.swift in Sources */,
 				F1EEAB5B2574EE5D0098ED69 /* TabbarView.swift in Sources */,
+				F17049D125B1CF270039D3C6 /* Settings+EnvironmentValues.swift in Sources */,
 				F12D2EAC259B5F8600FE9080 /* Persistance.swift in Sources */,
 				F1EEAB442574E56E0098ED69 /* PermissionRequestView.swift in Sources */,
 				F1EEAB702574F0520098ED69 /* PermissionRequestViewModel.swift in Sources */,
 				F12D2EC2259B694200FE9080 /* StorableObjects+Coffe.swift in Sources */,
+				F17049AE25B1C6130039D3C6 /* UserDefaults+SettingsService.swift in Sources */,
 				F16A8ADA25A8A87000C71C1A /* KeyedDecodingContainer+Type.swift in Sources */,
+				F17049C725B1CD9C0039D3C6 /* View+VibroEffect.swift in Sources */,
 				F1EEAC2825769C440098ED69 /* RootContainerView.swift in Sources */,
 				F16A8AD525A8A5FC00C71C1A /* Drink.swift in Sources */,
 				F12D2ED0259B872700FE9080 /* TouchDownUpEventModifier.swift in Sources */,
+				F17049CC25B1CED70039D3C6 /* View+Settings.swift in Sources */,
 				F16A8B0325A8E2AE00C71C1A /* HomeViewModel.swift in Sources */,
 				F16A8B2C25A8F53E00C71C1A /* ScaleButtonStyle.swift in Sources */,
 				F1EEAB8A2574F29E0098ED69 /* HealthKitManager.swift in Sources */,

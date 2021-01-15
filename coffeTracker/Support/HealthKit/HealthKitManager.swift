@@ -35,7 +35,13 @@ final class HealthKitManager: HealthKitService {
     }
     
     private let healthStore = HKHealthStore()
+    private lazy var isAvailable = HKHealthStore.isHealthDataAvailable()
     
+    private lazy var milligrams = HKUnit.gramUnit(with: .milli)
+    private lazy var caffeineType = HKObjectType.quantityType(forIdentifier: .dietaryCaffeine)
+    private lazy var calories = HKUnit.smallCalorie()
+    private lazy var caloriesType = HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)
+
     private var writeTypes: Set<HKQuantityType> {
         Set(
             [
@@ -57,6 +63,8 @@ final class HealthKitManager: HealthKitService {
             .compactMap({ $0 })
         )
     }
+    
+    // MARK: - Access
     
     func shouldAskDataAccess() -> AnyPublisher<Bool, Never> {
         Deferred {
@@ -98,12 +106,8 @@ final class HealthKitManager: HealthKitService {
         .eraseToAnyPublisher()
     }
     
-    private lazy var isAvailable = HKHealthStore.isHealthDataAvailable()
-    private lazy var milligrams = HKUnit.gramUnit(with: .milli)
-    private lazy var caffeineType = HKObjectType.quantityType(forIdentifier: .dietaryCaffeine)
-    private lazy var calories = HKUnit.smallCalorie()
-    private lazy var caloriesType = HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)
-    
+    // MARK: - Save drink
+        
     func saveDrink(_ drink: CoffeeContainableDrink) -> AnyPublisher<Bool, Error> {
         Deferred {
             Future { promise in

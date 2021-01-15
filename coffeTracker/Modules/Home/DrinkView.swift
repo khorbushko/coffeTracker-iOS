@@ -16,6 +16,7 @@ struct DrinkView: View {
     @State private var checkMarkPathVisibilityAmount: CGFloat = 0
     @State private var appearenceOpacity: Double = 0
     @State private var isAnimationInProgress: Bool = false
+    @Environment(\.settings) private var settings: SettingsService
     
     private var buttonContent: some View {
         ZStack {
@@ -86,6 +87,7 @@ struct DrinkView: View {
             .buttonStyle(ScaleButtonStyle())
             .animation(.easeOut)
             .allowsHitTesting(!isAnimationInProgress)
+            .vibroOnTapIfNeeded(.selection, settings: settings)
         }
     }
 }
@@ -105,10 +107,7 @@ struct DrinkView_Previews: PreviewProvider {
             displayOrder: 1
         )
 
-        DrinkView(item: item,
-//                  isTapped: .constant(false),
-                  action: {}
-        )
+        DrinkView(item: item, action: {})
             .previewLayout(.sizeThatFits)
             .frame(width: 150, height: 150)
     }
