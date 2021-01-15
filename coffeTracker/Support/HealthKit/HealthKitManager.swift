@@ -19,13 +19,21 @@ enum Health {
 }
 
 protocol HealthKitService {
-        
+    
     func shouldAskDataAccess() -> AnyPublisher<Bool, Never>
     func requestDataAccess() -> AnyPublisher<Health.AccessState, Never>
+    
+    func saveDrink(_ drink: CoffeeContainableDrink) -> AnyPublisher<Bool, Error>
 }
 
 final class HealthKitManager: HealthKitService {
-
+    
+    enum StoreFailure: Error {
+        
+        case storageNotAvailable
+        case objectTypeNotAvailable
+    }
+    
     private let healthStore = HKHealthStore()
     
     private var writeTypes: Set<HKQuantityType> {
@@ -53,13 +61,6 @@ final class HealthKitManager: HealthKitService {
     func shouldAskDataAccess() -> AnyPublisher<Bool, Never> {
         Deferred {
             Future { promise in
-                #if !targetEnvironment(simulator)
-                if HKHealthStore.isHealthDataAvailable() {
-                    promise(.success(false))
-                    return
-                }
-                #endif
-                
                 self.healthStore.getRequestStatusForAuthorization(
                     toShare: self.writeTypes,
                     read: self.readTypes) { (status, error) in
@@ -82,14 +83,6 @@ final class HealthKitManager: HealthKitService {
     func requestDataAccess() -> AnyPublisher<Health.AccessState, Never> {
         Deferred {
             Future { promise in
-                
-                #if !targetEnvironment(simulator)
-                if HKHealthStore.isHealthDataAvailable() {
-                    promise(.success(.unavailable))
-                    return
-                }
-                #endif
-                
                 self.healthStore.requestAuthorization(
                     toShare: self.writeTypes,
                     read: self.readTypes
@@ -98,6 +91,68 @@ final class HealthKitManager: HealthKitService {
                         promise(.success(.proceed))
                     } else {
                         promise(.success(.failed))
+                    }
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    
+    private lazy var isAvailable = HKHealthStore.isHealthDataAvailable()
+    private lazy var milligrams = HKUnit.gramUnit(with: .milli)
+    private lazy var caffeineType = HKObjectType.quantityType(forIdentifier: .dietaryCaffeine)
+    private lazy var calories = HKUnit.smallCalorie()
+    private lazy var caloriesType = HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)
+    
+    func saveDrink(_ drink: CoffeeContainableDrink) -> AnyPublisher<Bool, Error> {
+        Deferred {
+            Future { promise in
+                if !self.isAvailable  {
+                    promise(.failure(StoreFailure.storageNotAvailable))
+                }
+                
+                if let caffeineType = self.caffeineType,
+                   let caloriesType = self.caloriesType {
+                    let metadata: [String: Any] = [
+                        HKMetadataKeySyncIdentifier: drink.uuid,
+                        HKMetadataKeySyncVersion: 1,
+                        HKMetadataKeyTimeZone: TimeZone.current.identifier,
+                        HKMetadataKeyWasUserEntered: NSNumber(booleanLiteral: false),
+                        HKMetadataKeyFoodType: drink.name
+                    ]
+                    
+                    let start = Date()
+                    let end = start
+                    
+                    let mgCaffeine = HKQuantity(unit: self.milligrams, doubleValue: drink.caffeine)
+                    let caffeineSample = HKQuantitySample(
+                        type: caffeineType,
+                        quantity: mgCaffeine,
+                        start: start,
+                        end: end,
+                        metadata: metadata
+                    )
+                    
+                    let caloriesQty = HKQuantity(unit: self.calories, doubleValue: drink.calories)
+                    let caloriesSample = HKQuantitySample(
+                        type: caloriesType,
+                        quantity: caloriesQty,
+                        start: start,
+                        end: end,
+                        metadata: metadata
+                    )
+                    
+                    self.healthStore.save([
+                        caffeineSample,
+                        caloriesSample
+                    ]
+                    ) { (success, error) in
+                        if let error = error {
+                            promise(.failure(error))
+                        } else {
+                            assert(success, "no error should indicate success")
+                            promise(.success(success))
+                        }
                     }
                 }
             }
@@ -123,19 +178,19 @@ final class HealthKitManager: HealthKitService {
  1.oz = 29.5735296875 ml
  
  Brewed Coffee
-    made by pouring hot or boiling water over ground coffee beans, usually contained in a filter
-    
+ made by pouring hot or boiling water over ground coffee beans, usually contained in a filter
+ 
  8 oz
-    dietaryCaffeine    - 95 mg
-
+ dietaryCaffeine    - 95 mg
+ 
  Espresso
-    made by forcing a small amount of hot water, or steam, through finely ground coffee beans.
+ made by forcing a small amount of hot water, or steam, through finely ground coffee beans.
  1 - 1.75 oz
  dietaryCaffeine    - 63 mg
-
+ 
  Espresso-Based Drinks
-    made from espresso shots mixed with varying types and amounts of milk.
-various oz
+ made from espresso shots mixed with varying types and amounts of milk.
+ various oz
  
  small
  dietaryCaffeine    - 63 mg
@@ -144,9 +199,9 @@ various oz
  
  Instant Coffee
  made from brewed coffee that has been freeze-dried or spray-dried. It is generally in large, dry pieces, which dissolve in water
-?
+ ?
  dietaryCaffeine    - 50 mg
-
+ 
  Decaf Coffee
  decaf coffee is not entirely caffeine free
  
@@ -168,7 +223,7 @@ various oz
  Brewed black, decaf         8 (237)              2
  Brewed green               8 (237)             28
  Ready-to-drink, bottled    8 (237)              19
-
+ 
  Sodas                   Size in oz. (mL)        Caffeine (mg)
  Citrus (most brands)            8 (237)               0
  Cola                            8 (237)                22
@@ -179,11 +234,11 @@ various oz
  Energy drinks           Size in oz. (mL)    Caffeine (mg)
  Energy drink                8 (237)             29
  Energy shot                 1 (30)               215
-
+ 
  ----
  
  Drink type          Caffeine content [g/L]    Standard size             Caffeine dose
-                                                                        in a portion [mg]
+ in a portion [mg]
  Espresso                   1.5                 1.7 fl oz (50 ml)            75
  Filter coffee               0.6                8 fl oz (237 ml)             142.2
  Instant coffee              0.4                8 fl oz (237 ml)                94.8
@@ -211,7 +266,7 @@ various oz
  
  adult
  400 mg per 76 kg or 5.26 mg of caffeine per kilogram of body weight is considered safe caffeine intake for an average adult
-400 mg per day (1 kg - 6 mg)
+ 400 mg per day (1 kg - 6 mg)
  for pregnant - 4.31 mg / kg
  
  
@@ -222,3 +277,4 @@ various oz
  
  
  */
+

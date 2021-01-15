@@ -20,6 +20,24 @@
 		F10CB4DC256FE621005FA2D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10CB4DB256FE621005FA2D9 /* Assets.xcassets */; };
 		F10CB4DF256FE621005FA2D9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10CB4DE256FE621005FA2D9 /* Preview Assets.xcassets */; };
 		F10CB4F5256FE621005FA2D9 /* coffeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10CB4F4256FE621005FA2D9 /* coffeTrackerUITests.swift */; };
+		F12D2EAC259B5F8600FE9080 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D2EAB259B5F8600FE9080 /* Persistance.swift */; };
+		F12D2EB5259B5FB600FE9080 /* coffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F12D2EB3259B5FB600FE9080 /* coffee.xcdatamodeld */; };
+		F12D2EBA259B63F300FE9080 /* DrinkProvider+Initial.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D2EB9259B63F300FE9080 /* DrinkProvider+Initial.swift */; };
+		F12D2EC2259B694200FE9080 /* StorableObjects+Coffe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D2EC1259B694200FE9080 /* StorableObjects+Coffe.swift */; };
+		F12D2ED0259B872700FE9080 /* TouchDownUpEventModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12D2ECF259B872700FE9080 /* TouchDownUpEventModifier.swift */; };
+		F16A8AD025A8A52C00C71C1A /* CoffeeContainableDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8ACF25A8A52C00C71C1A /* CoffeeContainableDrink.swift */; };
+		F16A8AD525A8A5FC00C71C1A /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8AD425A8A5FC00C71C1A /* Drink.swift */; };
+		F16A8ADA25A8A87000C71C1A /* KeyedDecodingContainer+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8AD925A8A87000C71C1A /* KeyedDecodingContainer+Type.swift */; };
+		F16A8B0325A8E2AE00C71C1A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8B0225A8E2AE00C71C1A /* HomeViewModel.swift */; };
+		F16A8B0825A8E2CE00C71C1A /* ExchangeFavouriteDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8B0725A8E2CE00C71C1A /* ExchangeFavouriteDrinkView.swift */; };
+		F16A8B1025A8E2F700C71C1A /* DrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8B0F25A8E2F700C71C1A /* DrinkView.swift */; };
+		F16A8B1625A8E61F00C71C1A /* PreviewContextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8B1525A8E61F00C71C1A /* PreviewContextView.swift */; };
+		F16A8B1E25A8E77A00C71C1A /* Binding+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8B1D25A8E77A00C71C1A /* Binding+Constant.swift */; };
+		F16A8B2625A8F4D800C71C1A /* HomeItemHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8B2525A8F4D800C71C1A /* HomeItemHolderView.swift */; };
+		F16A8B2C25A8F53E00C71C1A /* ScaleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A8B2B25A8F53E00C71C1A /* ScaleButtonStyle.swift */; };
+		F16B2B61258A20C60067F727 /* predefinedDrinks.json in Resources */ = {isa = PBXBuildFile; fileRef = F16B2B60258A20C60067F727 /* predefinedDrinks.json */; };
+		F170499B25B17BAB0039D3C6 /* DelayedAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170499A25B17BAB0039D3C6 /* DelayedAnimation.swift */; };
+		F17049A125B1B06B0039D3C6 /* AnimationCompletionModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049A025B1B06B0039D3C6 /* AnimationCompletionModifier.swift */; };
 		F198ADCB2584B0FF00C244E1 /* FakeHealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */; };
 		F198ADE12584E98A00C244E1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */; };
 		F198ADF62585145500C244E1 /* PermissionRequestViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */; };
@@ -79,6 +97,24 @@
 		F10CB4F0256FE621005FA2D9 /* coffeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coffeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F10CB4F4256FE621005FA2D9 /* coffeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffeTrackerUITests.swift; sourceTree = "<group>"; };
 		F10CB4F6256FE621005FA2D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F12D2EAB259B5F8600FE9080 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		F12D2EB4259B5FB600FE9080 /* coffe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coffe.xcdatamodel; sourceTree = "<group>"; };
+		F12D2EB9259B63F300FE9080 /* DrinkProvider+Initial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrinkProvider+Initial.swift"; sourceTree = "<group>"; };
+		F12D2EC1259B694200FE9080 /* StorableObjects+Coffe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorableObjects+Coffe.swift"; sourceTree = "<group>"; };
+		F12D2ECF259B872700FE9080 /* TouchDownUpEventModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchDownUpEventModifier.swift; sourceTree = "<group>"; };
+		F16A8ACF25A8A52C00C71C1A /* CoffeeContainableDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeContainableDrink.swift; sourceTree = "<group>"; };
+		F16A8AD425A8A5FC00C71C1A /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		F16A8AD925A8A87000C71C1A /* KeyedDecodingContainer+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Type.swift"; sourceTree = "<group>"; };
+		F16A8B0225A8E2AE00C71C1A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F16A8B0725A8E2CE00C71C1A /* ExchangeFavouriteDrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeFavouriteDrinkView.swift; sourceTree = "<group>"; };
+		F16A8B0F25A8E2F700C71C1A /* DrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkView.swift; sourceTree = "<group>"; };
+		F16A8B1525A8E61F00C71C1A /* PreviewContextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContextView.swift; sourceTree = "<group>"; };
+		F16A8B1D25A8E77A00C71C1A /* Binding+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Constant.swift"; sourceTree = "<group>"; };
+		F16A8B2525A8F4D800C71C1A /* HomeItemHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemHolderView.swift; sourceTree = "<group>"; };
+		F16A8B2B25A8F53E00C71C1A /* ScaleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleButtonStyle.swift; sourceTree = "<group>"; };
+		F16B2B60258A20C60067F727 /* predefinedDrinks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = predefinedDrinks.json; sourceTree = "<group>"; };
+		F170499A25B17BAB0039D3C6 /* DelayedAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedAnimation.swift; sourceTree = "<group>"; };
+		F17049A025B1B06B0039D3C6 /* AnimationCompletionModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCompletionModifier.swift; sourceTree = "<group>"; };
 		F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHealthKitService.swift; sourceTree = "<group>"; };
 		F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRequestViewModelTests.swift; sourceTree = "<group>"; };
@@ -131,9 +167,12 @@
 		F10A04362583988D00997744 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F16A8B2A25A8F53500C71C1A /* Styles */,
+				F16A8B1425A8E60F00C71C1A /* Debug */,
 				F10A044425839C9000997744 /* Extensions */,
 				F10A04602583C6F800997744 /* Shape */,
 				F10A04372583989300997744 /* View */,
+				F170499F25B1B0550039D3C6 /* ViewModifiers */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -153,6 +192,7 @@
 			children = (
 				F10A044525839C9D00997744 /* View+RoundedCorners.swift */,
 				F10A04692583CCB100997744 /* Color+Create.swift */,
+				F16A8AD925A8A87000C71C1A /* KeyedDecodingContainer+Type.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -278,6 +318,54 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		F12D2EAA259B5F7E00FE9080 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				F12D2EB9259B63F300FE9080 /* DrinkProvider+Initial.swift */,
+				F16B2B60258A20C60067F727 /* predefinedDrinks.json */,
+				F12D2EAB259B5F8600FE9080 /* Persistance.swift */,
+				F12D2EC1259B694200FE9080 /* StorableObjects+Coffe.swift */,
+				F12D2EB3259B5FB600FE9080 /* coffee.xcdatamodeld */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		F16A8AC225A878D100C71C1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F16A8ACF25A8A52C00C71C1A /* CoffeeContainableDrink.swift */,
+				F16A8AD425A8A5FC00C71C1A /* Drink.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F16A8B1425A8E60F00C71C1A /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				F16A8B1525A8E61F00C71C1A /* PreviewContextView.swift */,
+				F16A8B1D25A8E77A00C71C1A /* Binding+Constant.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		F16A8B2A25A8F53500C71C1A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F16A8B2B25A8F53E00C71C1A /* ScaleButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F170499F25B1B0550039D3C6 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F12D2ECF259B872700FE9080 /* TouchDownUpEventModifier.swift */,
+				F170499A25B17BAB0039D3C6 /* DelayedAnimation.swift */,
+				F17049A025B1B06B0039D3C6 /* AnimationCompletionModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		F198ADC82584B0DC00C244E1 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +443,8 @@
 		F1EEAB4B2574E6A40098ED69 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				F16A8AC225A878D100C71C1A /* Model */,
+				F12D2EAA259B5F7E00FE9080 /* Persistance */,
 				F1EEAB882574F28E0098ED69 /* HealthKit */,
 				F1EEAB4C2574E6AE0098ED69 /* ViewStyle.swift */,
 				F1EEAB512574E6DB0098ED69 /* Pallete.swift */,
@@ -373,7 +463,11 @@
 		F1EEAB622574EE800098ED69 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F16A8B0225A8E2AE00C71C1A /* HomeViewModel.swift */,
 				F10CB4D9256FE61E005FA2D9 /* HomeView.swift */,
+				F16A8B2525A8F4D800C71C1A /* HomeItemHolderView.swift */,
+				F16A8B0F25A8E2F700C71C1A /* DrinkView.swift */,
+				F16A8B0725A8E2CE00C71C1A /* ExchangeFavouriteDrinkView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -537,6 +631,7 @@
 			files = (
 				F198ADE12584E98A00C244E1 /* Launch Screen.storyboard in Resources */,
 				F10CB4DF256FE621005FA2D9 /* Preview Assets.xcassets in Resources */,
+				F16B2B61258A20C60067F727 /* predefinedDrinks.json in Resources */,
 				F10CB4DC256FE621005FA2D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,24 +658,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EEAB682574EEA90098ED69 /* SettingsView.swift in Sources */,
+				F16A8B1E25A8E77A00C71C1A /* Binding+Constant.swift in Sources */,
 				F10A046A2583CCB100997744 /* Color+Create.swift in Sources */,
+				F16A8AD025A8A52C00C71C1A /* CoffeeContainableDrink.swift in Sources */,
+				F16A8B1025A8E2F700C71C1A /* DrinkView.swift in Sources */,
 				F10A044E2583A57500997744 /* RootContainerViewModel.swift in Sources */,
 				F10A044625839C9D00997744 /* View+RoundedCorners.swift in Sources */,
+				F170499B25B17BAB0039D3C6 /* DelayedAnimation.swift in Sources */,
+				F12D2EBA259B63F300FE9080 /* DrinkProvider+Initial.swift in Sources */,
+				F16A8B1625A8E61F00C71C1A /* PreviewContextView.swift in Sources */,
 				F10CB4DA256FE61E005FA2D9 /* HomeView.swift in Sources */,
 				F10CB4D8256FE61E005FA2D9 /* CoffeApp.swift in Sources */,
 				F1EEAB4D2574E6AE0098ED69 /* ViewStyle.swift in Sources */,
+				F16A8B0825A8E2CE00C71C1A /* ExchangeFavouriteDrinkView.swift in Sources */,
 				F10A04622583C70100997744 /* Checkmark.swift in Sources */,
 				F1EEAB522574E6DB0098ED69 /* Pallete.swift in Sources */,
 				F10A043A258398A500997744 /* BottomSheetView.swift in Sources */,
 				F1EEAC342576BA3B0098ED69 /* ActivityView.swift in Sources */,
 				F1EEAB922574F2B60098ED69 /* EnvironmentValues.swift in Sources */,
 				F1EEAB5B2574EE5D0098ED69 /* TabbarView.swift in Sources */,
+				F12D2EAC259B5F8600FE9080 /* Persistance.swift in Sources */,
 				F1EEAB442574E56E0098ED69 /* PermissionRequestView.swift in Sources */,
 				F1EEAB702574F0520098ED69 /* PermissionRequestViewModel.swift in Sources */,
+				F12D2EC2259B694200FE9080 /* StorableObjects+Coffe.swift in Sources */,
+				F16A8ADA25A8A87000C71C1A /* KeyedDecodingContainer+Type.swift in Sources */,
 				F1EEAC2825769C440098ED69 /* RootContainerView.swift in Sources */,
+				F16A8AD525A8A5FC00C71C1A /* Drink.swift in Sources */,
+				F12D2ED0259B872700FE9080 /* TouchDownUpEventModifier.swift in Sources */,
+				F16A8B0325A8E2AE00C71C1A /* HomeViewModel.swift in Sources */,
+				F16A8B2C25A8F53E00C71C1A /* ScaleButtonStyle.swift in Sources */,
 				F1EEAB8A2574F29E0098ED69 /* HealthKitManager.swift in Sources */,
+				F17049A125B1B06B0039D3C6 /* AnimationCompletionModifier.swift in Sources */,
 				F10A04792583D0B000997744 /* Crossmark.swift in Sources */,
 				F10A04592583B4CE00997744 /* LoadingButton.swift in Sources */,
+				F16A8B2625A8F4D800C71C1A /* HomeItemHolderView.swift in Sources */,
+				F12D2EB5259B5FB600FE9080 /* coffee.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +859,7 @@
 				CODE_SIGN_ENTITLEMENTS = coffeTracker/coffeTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"coffeTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = AVSMHN95G3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/coffeTracker/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -754,7 +867,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.coffeTracker.coffeTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coffeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -769,6 +882,7 @@
 				CODE_SIGN_ENTITLEMENTS = coffeTracker/coffeTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"coffeTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = AVSMHN95G3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/coffeTracker/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -776,7 +890,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.coffeTracker.coffeTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coffeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -929,6 +1043,19 @@
 			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		F12D2EB3259B5FB600FE9080 /* coffee.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F12D2EB4259B5FB600FE9080 /* coffe.xcdatamodel */,
+			);
+			currentVersion = F12D2EB4259B5FB600FE9080 /* coffe.xcdatamodel */;
+			path = coffee.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F10CB4CC256FE61D005FA2D9 /* Project object */;
 }

@@ -18,4 +18,5 @@ enum Pallete {
     static var brown = Color(red: 150, green: 87, blue: 54)
     static var blue = Color.blue
     static var utilityGray = Color(red: 60, green: 60, blue: 67)
+    static var gray = Color(red: 150, green: 150, blue: 150)
 }

@@ -1,0 +1,82 @@
+[
+    {
+        "name" : "Espresso",
+        "measurementUnit": "ml",
+        "servingSize": 50,
+        "caffeine": 65,
+        "unit": "mg",
+        "image": "icons-1-espresso",
+        "calories": 1,
+        "isFavourite": true
+    },
+    {
+        "name" : "Lungo",
+        "measurementUnit": "ml",
+        "servingSize": 110,
+        "caffeine": 144,
+        "unit": "mg",
+        "image": "icons-2-lungo",
+        "calories": 2,
+        "isFavourite": true
+    },
+    {
+        "name" : "Latte",
+        "measurementUnit": "ml",
+        "servingSize": 237,
+        "caffeine": 80.58,
+        "unit": "mg",
+        "image": "icons-4-latte",
+        "calories": 134,
+        "isFavourite": true
+    },
+    {
+        "name" : "Decaf",
+        "measurementUnit": "ml",
+        "servingSize": 237,
+        "caffeine": 9.48,
+        "unit": "mg",
+        "image": "icons-6-decaf",
+        "calories": 1,
+        "isFavourite": true
+    },
+    {
+        "name" : "Black tea",
+        "measurementUnit": "ml",
+        "servingSize": 237,
+        "caffeine": 35.55,
+        "unit": "mg",
+        "image": "icons-7-black-tea",
+        "calories": 2,
+        "isFavourite": true
+    },
+    {
+        "name" : "Green tea",
+        "measurementUnit": "ml",
+        "servingSize": 237,
+        "caffeine": 21.33,
+        "unit": "mg",
+        "image": "icons-8-green-tea",
+        "calories": 2.45,
+        "isFavourite": true
+    },
+    {
+        "name" : "Coke",
+        "measurementUnit": "ml",
+        "servingSize": 355,
+        "caffeine": 35.5,
+        "unit": "mg",
+        "image": "icons-9-coke",
+        "calories": 150,
+        "isFavourite": false
+    },
+    {
+        "name" : "Diet Coke",
+        "measurementUnit": "ml",
+        "servingSize": 355,
+        "caffeine": 46.15,
+        "unit": "mg",
+        "image": "icons-10-diet-coke",
+        "calories": 0,
+        "isFavourite": false
+    }
+]

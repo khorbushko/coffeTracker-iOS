@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct CoffeApp: App {
+    
+    init() {
+        DrinkProvider.populateInitialDataIfNeeded()
+    }
+    
     var body: some Scene {
         WindowGroup {
             RootContainerView()
+                .environment(
+                    \.managedObjectContext,
+                    PersistenceController.mainContext
+                )
         }
     }
 }

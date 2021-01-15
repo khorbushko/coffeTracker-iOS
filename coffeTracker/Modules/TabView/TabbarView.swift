@@ -29,7 +29,7 @@ struct TabbarView: View {
         [
             BottomBar.ButtonItem(
                 id: 0,
-                image: Image(systemName: "pencil.and.outline"),
+                image: Image("ic_tabBar_home"),
                 text: Text("Home"),
                 activeTint: activeTabBarTint,
                 inActiveTint: inactiveTabBarTint,
@@ -37,7 +37,7 @@ struct TabbarView: View {
             ),
             BottomBar.ButtonItem(
                 id: 1,
-                image: Image(systemName: "gear"),
+                image: Image("ic_tabBar_settings"),
                 text: Text("Settings"),
                 activeTint: activeTabBarTint,
                 inActiveTint: inactiveTabBarTint,
@@ -138,11 +138,12 @@ fileprivate struct BottomBar: View {
                             .renderingMode(.template)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .padding(.top, 8)
-                            .frame(maxWidth: 32, maxHeight: 32)
+                            .padding(.top, 6)
+                            .frame(idealWidth: 32, idealHeight: 32)
                         text
                             .minimumScaleFactor(0.5)
-                            .padding(.bottom, 8)
+                            .padding(.bottom, 6)
+                            .padding(.top, -6)
                     }
                     .foregroundColor(Pallete.white)
                     .colorMultiply(activeIndex == id ? activeTint : inActiveTint)

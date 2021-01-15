@@ -24,26 +24,26 @@ struct PermissionRequestView: View {
     
     @ViewBuilder
     private var informativeContent: some View {
-        Spacer()
         HStack {
-            VStack(alignment: .leading) {
+            VStack {
+                Spacer()
                 Image("ic_intro_healthKit")
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
                     .frame(width: 100)
                 Spacer()
             }
-            .frame(height: 100)
             Text("This application require access to your HealthKit data in order to calculate, predict and analyze consumed drinks.")
+                .foregroundColor(Pallete.brown)
         }
-        
+
         HStack {
             Text("To continue, press \"Next\" button...")
+                .foregroundColor(Pallete.brown)
             Spacer()
         }
         .padding()
         .opacity(viewModel.state == .initial ? 1 : 0)
-        Spacer()
     }
     
     private var bottomButton: some View {
@@ -163,5 +163,7 @@ struct PermissionRequestView: View {
 struct IntroView_Previews: PreviewProvider {
     static var previews: some View {
         PermissionRequestView(isShown: .constant(true))
+        PermissionRequestView(isShown: .constant(true))
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
     }
 }

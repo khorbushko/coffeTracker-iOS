@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icons-8-green-tea.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

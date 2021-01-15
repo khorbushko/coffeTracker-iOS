@@ -68,9 +68,13 @@ struct RootContainerView: View {
             }
         }
         .animation(.easeOut)
-        .onReceive(viewModel.$shouldAskPermission, perform: { value in
-            displayPermission = value
-        })
+        .onReceive(
+            viewModel.$shouldAskPermission
+                .receive(on: DispatchQueue.main),
+            perform: { value in
+                displayPermission = value
+            }
+        )
     }
     
     // MARK: - Private
@@ -91,5 +95,8 @@ struct RootContainerView: View {
 struct RootContainerView_Previews: PreviewProvider {
     static var previews: some View {
         RootContainerView()
+        RootContainerView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 7"))
+
     }
 }
