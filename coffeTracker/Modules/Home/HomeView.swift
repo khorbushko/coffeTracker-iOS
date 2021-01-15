@@ -34,7 +34,7 @@ struct HomeView: View {
                                 DrinkView(
                                     item: item,
                                     action: {
-                                        //                                    viewModel.saveDrink(item)
+                                        viewModel.saveDrink(item)
                                     }
                                 )
                             }

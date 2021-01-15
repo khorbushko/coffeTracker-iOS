@@ -18,6 +18,7 @@ protocol CoffeeContainableDrink {
     var servingSize: Int64 { get set }
     var unit: String { get set }
     var uuid: String { get set }
+    var displayOrder: Int { get set }
     
     var drinkDate: Date? { get set }
 }

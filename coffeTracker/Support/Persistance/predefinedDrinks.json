@@ -7,7 +7,8 @@
         "unit": "mg",
         "image": "icons-1-espresso",
         "calories": 1,
-        "isFavourite": true
+        "isFavourite": true,
+        "displayOrder": 1
     },
     {
         "name" : "Lungo",
@@ -17,7 +18,8 @@
         "unit": "mg",
         "image": "icons-2-lungo",
         "calories": 2,
-        "isFavourite": true
+        "isFavourite": true,
+        "displayOrder": 2
     },
     {
         "name" : "Latte",
@@ -27,7 +29,8 @@
         "unit": "mg",
         "image": "icons-4-latte",
         "calories": 134,
-        "isFavourite": true
+        "isFavourite": true,
+        "displayOrder": 3
     },
     {
         "name" : "Decaf",
@@ -37,7 +40,8 @@
         "unit": "mg",
         "image": "icons-6-decaf",
         "calories": 1,
-        "isFavourite": true
+        "isFavourite": true,
+        "displayOrder": 4
     },
     {
         "name" : "Black tea",
@@ -47,7 +51,8 @@
         "unit": "mg",
         "image": "icons-7-black-tea",
         "calories": 2,
-        "isFavourite": true
+        "isFavourite": true,
+        "displayOrder": 5
     },
     {
         "name" : "Green tea",
@@ -57,7 +62,8 @@
         "unit": "mg",
         "image": "icons-8-green-tea",
         "calories": 2.45,
-        "isFavourite": true
+        "isFavourite": true,
+        "displayOrder": 6
     },
     {
         "name" : "Coke",
@@ -67,7 +73,8 @@
         "unit": "mg",
         "image": "icons-9-coke",
         "calories": 150,
-        "isFavourite": false
+        "isFavourite": false,
+        "displayOrder": 7
     },
     {
         "name" : "Diet Coke",
@@ -77,6 +84,7 @@
         "unit": "mg",
         "image": "icons-10-diet-coke",
         "calories": 0,
-        "isFavourite": false
+        "isFavourite": false,
+        "displayOrder": 8
     }
 ]

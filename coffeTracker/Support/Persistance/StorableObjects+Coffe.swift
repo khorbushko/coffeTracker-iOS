@@ -43,7 +43,8 @@ extension CDDrink {
                 name: name,
                 servingSize: servingSize,
                 unit: unit,
-                uuid: uuid
+                uuid: uuid,
+                displayOrder: Int(displayOrder)
             )
         }
         
@@ -61,6 +62,7 @@ extension CDDrink {
         newDrink.isFavourite = drink.isFavourite
         newDrink.calories = drink.calories
         newDrink.uuid = drink.uuid
+        newDrink.displayOrder = Int64(drink.displayOrder)
         
         return newDrink
     }

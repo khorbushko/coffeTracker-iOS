@@ -19,6 +19,7 @@ struct Drink: CoffeeContainableDrink, Codable, Equatable {
     var unit: String
     var uuid: String
     var drinkDate: Date?
+    var displayOrder: Int
     
     init(
         caffeine: Double,
@@ -30,7 +31,8 @@ struct Drink: CoffeeContainableDrink, Codable, Equatable {
         servingSize: Int64,
         unit: String,
         uuid: String,
-        drinkDate: Date? = nil
+        drinkDate: Date? = nil,
+        displayOrder: Int
         ) {
         self.caffeine = caffeine
         self.calories = calories
@@ -42,6 +44,7 @@ struct Drink: CoffeeContainableDrink, Codable, Equatable {
         self.unit = unit
         self.uuid = uuid
         self.drinkDate = drinkDate
+        self.displayOrder = displayOrder
     }
 
     private enum Key: String, CodingKey {
@@ -56,6 +59,7 @@ struct Drink: CoffeeContainableDrink, Codable, Equatable {
         case unit
         case uuid
         case drinkDate
+        case displayOrder
     }
 
     init(from decoder: Decoder) throws {
@@ -71,5 +75,6 @@ struct Drink: CoffeeContainableDrink, Codable, Equatable {
         unit = try container.decode(.unit)
         uuid = (try? container.decodeIfPresent(.uuid)) ?? UUID().uuidString
         drinkDate = try? container.decodeIfPresent(.drinkDate)
+        displayOrder = try container.decode(.displayOrder)
     }
 }

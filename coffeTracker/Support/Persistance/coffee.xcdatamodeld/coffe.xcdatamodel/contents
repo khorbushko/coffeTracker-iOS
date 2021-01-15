@@ -3,6 +3,7 @@
     <entity name="CDDrink" representedClassName="CDDrink" syncable="YES" codeGenerationType="class">
         <attribute name="caffeine" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="calories" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="displayOrder" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="image" attributeType="String" defaultValueString=" "/>
         <attribute name="isFavourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="measurementUnit" attributeType="String" defaultValueString=""/>
@@ -12,6 +13,6 @@
         <attribute name="uuid" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CDDrink" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="CDDrink" positionX="-63" positionY="-18" width="128" height="193"/>
     </elements>
 </model>

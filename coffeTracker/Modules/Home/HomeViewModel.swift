@@ -54,9 +54,13 @@ final class HomeViewModel: ObservableObject {
     
     func requestDrinks() {
         drinks = CDDrink.fetchAllFavourites()?
-            .compactMap({ $0.coffeeDrink() }) ?? []
+            .compactMap({ $0.coffeeDrink() })
+            .sorted(by: {
+                $0.displayOrder < $1.displayOrder
+            })
+            ?? []
     }
-    
+
     func indexFor(_ drink: CoffeeContainableDrink) -> Int? {
         drinks
             .firstIndex(where: { drink.uuid == $0.uuid })

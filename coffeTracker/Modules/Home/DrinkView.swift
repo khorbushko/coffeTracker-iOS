@@ -101,7 +101,8 @@ struct DrinkView_Previews: PreviewProvider {
             name: "Espresso",
             servingSize: 50,
             unit: "ml",
-            uuid: ""
+            uuid: "",
+            displayOrder: 1
         )
 
         DrinkView(item: item,
