@@ -11,6 +11,41 @@ struct HomeView: View {
     
     @ObservedObject private var viewModel: HomeViewModel
     
+    @ViewBuilder
+    private var reportCoffeeView: some View {
+        Group {
+            let columns: [GridItem] = .init(
+                repeatElement(
+                    GridItem(),
+                    count: 3
+                )
+            )
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(viewModel.drinks, id: \.uuid) { item in
+                        DrinkView(
+                            item: item,
+                            action: {
+                                viewModel.saveDrink(item)
+                            }
+                        )
+                    }
+                }
+                .delayedAnimation(animation: .linear)
+                .font(.largeTitle)
+            }
+            .padding()
+        }
+    }
+    
+    @ViewBuilder
+    private var last24HDrinkInfoView: some View {
+        VStack {
+            Text("Consumed \(viewModel.consumedCoffeine)")
+            Text("Active \(viewModel.activeCoffeine)")
+        }
+    }
+    
     // MARK: - Lifecycle
     
     init() {
@@ -22,27 +57,8 @@ struct HomeView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    let columns: [GridItem] = .init(
-                        repeatElement(
-                            GridItem(),
-                            count: 3
-                        )
-                    )
-                    ScrollView {
-                        LazyVGrid(columns: columns) {
-                            ForEach(viewModel.drinks, id: \.uuid) { item in
-                                DrinkView(
-                                    item: item,
-                                    action: {
-                                        viewModel.saveDrink(item)
-                                    }
-                                )
-                            }
-                        }
-                        .delayedAnimation(animation: .linear)
-                        .font(.largeTitle)
-                    }
-                    .padding()
+                    reportCoffeeView
+                    last24HDrinkInfoView
                     Spacer()
                 }
             }
@@ -59,6 +75,9 @@ struct HomeView: View {
             )
             .onAppear(perform: {
                 viewModel.requestDrinks()
+            })
+            .onAppear(perform: {
+                viewModel.fetchTodaysDrink()
             })
         }
     }

@@ -45,6 +45,8 @@
 		F17049C725B1CD9C0039D3C6 /* View+VibroEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049C625B1CD9C0039D3C6 /* View+VibroEffect.swift */; };
 		F17049CC25B1CED70039D3C6 /* View+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049CB25B1CED70039D3C6 /* View+Settings.swift */; };
 		F17049D125B1CF270039D3C6 /* Settings+EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049D025B1CF270039D3C6 /* Settings+EnvironmentValues.swift */; };
+		F17049D925B1DAE30039D3C6 /* ConsumedCaffeine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049D825B1DAE30039D3C6 /* ConsumedCaffeine.swift */; };
+		F17049DE25B1DE0F0039D3C6 /* CaffeineDoseCalculatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17049DD25B1DE0F0039D3C6 /* CaffeineDoseCalculatable.swift */; };
 		F198ADCB2584B0FF00C244E1 /* FakeHealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */; };
 		F198ADE12584E98A00C244E1 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */; };
 		F198ADF62585145500C244E1 /* PermissionRequestViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */; };
@@ -129,6 +131,8 @@
 		F17049C625B1CD9C0039D3C6 /* View+VibroEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+VibroEffect.swift"; sourceTree = "<group>"; };
 		F17049CB25B1CED70039D3C6 /* View+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Settings.swift"; sourceTree = "<group>"; };
 		F17049D025B1CF270039D3C6 /* Settings+EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings+EnvironmentValues.swift"; sourceTree = "<group>"; };
+		F17049D825B1DAE30039D3C6 /* ConsumedCaffeine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumedCaffeine.swift; sourceTree = "<group>"; };
+		F17049DD25B1DE0F0039D3C6 /* CaffeineDoseCalculatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaffeineDoseCalculatable.swift; sourceTree = "<group>"; };
 		F198ADCA2584B0FF00C244E1 /* FakeHealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeHealthKitService.swift; sourceTree = "<group>"; };
 		F198ADE02584E98A00C244E1 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F198ADF52585145400C244E1 /* PermissionRequestViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRequestViewModelTests.swift; sourceTree = "<group>"; };
@@ -349,8 +353,10 @@
 		F16A8AC225A878D100C71C1A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F17049DD25B1DE0F0039D3C6 /* CaffeineDoseCalculatable.swift */,
 				F16A8ACF25A8A52C00C71C1A /* CoffeeContainableDrink.swift */,
 				F16A8AD425A8A5FC00C71C1A /* Drink.swift */,
+				F17049D825B1DAE30039D3C6 /* ConsumedCaffeine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -699,9 +705,11 @@
 				F16A8B1625A8E61F00C71C1A /* PreviewContextView.swift in Sources */,
 				F10CB4DA256FE61E005FA2D9 /* HomeView.swift in Sources */,
 				F10CB4D8256FE61E005FA2D9 /* CoffeApp.swift in Sources */,
+				F17049DE25B1DE0F0039D3C6 /* CaffeineDoseCalculatable.swift in Sources */,
 				F1EEAB4D2574E6AE0098ED69 /* ViewStyle.swift in Sources */,
 				F16A8B0825A8E2CE00C71C1A /* ExchangeFavouriteDrinkView.swift in Sources */,
 				F17049BC25B1C67F0039D3C6 /* SettingsViewModel.swift in Sources */,
+				F17049D925B1DAE30039D3C6 /* ConsumedCaffeine.swift in Sources */,
 				F10A04622583C70100997744 /* Checkmark.swift in Sources */,
 				F1EEAB522574E6DB0098ED69 /* Pallete.swift in Sources */,
 				F10A043A258398A500997744 /* BottomSheetView.swift in Sources */,

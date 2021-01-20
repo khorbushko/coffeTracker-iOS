@@ -42,6 +42,14 @@ final class HomeViewModel: ObservableObject {
     
     @Published private(set) var state: StoreState = .inactive
     @Published private(set) var drinks: [CoffeeContainableDrink] = []
+    @Published private(set) var consumedCoffeine: Double = 0
+    @Published private(set) var activeCoffeine: Double = 0
+    
+    // last 24 day drink hour, caffeine amount, name
+    @Published private(set) var consumedCoffeineData: [(Double, Double, String)] = []
+    
+    // last 24 day drink hour, active caffeine amount, name
+    @Published private(set) var consumedActiveCoffeineData: [(Double, Double, String)] = []
     
     private let healthKitService: HealthKitService
     private var tokens: Set<AnyCancellable> = []
@@ -51,6 +59,26 @@ final class HomeViewModel: ObservableObject {
     }
     
     // MARK: - Public
+    
+    func fetchTodaysDrink() {
+        
+        tokens.removeAll() // ??
+        
+        healthKitService.fetchLast24HCaffeineConsumptionData()
+            .subscribe(on: DispatchQueue.global())
+            .receive(on: DispatchQueue.main)
+            .sink { (completion) in
+                
+            } receiveValue: { (values) in
+                self.consumedCoffeine = values
+                    .map({ $0.caffeine })
+                    .reduce(0, +)
+                self.activeCoffeine = values
+                    .map({ $0.remainingCaffeine })
+                    .reduce(0, +)
+            }
+            .store(in: &tokens)
+    }
     
     func requestDrinks() {
         drinks = CDDrink.fetchAllFavourites()?
@@ -82,11 +110,12 @@ final class HomeViewModel: ObservableObject {
             } receiveValue: { [weak self] (success) in
                 if success {
                     self?.state = .stored
+                    self?.fetchTodaysDrink()
                 } else {
                     self?.state = .failed(StoreState.Failure.cantStoreObject)
                 }
-                                
-                print("stored \(success)")
+                    
+                debugPrint("stored \(success)")
             }
             .store(in: &tokens)
     }

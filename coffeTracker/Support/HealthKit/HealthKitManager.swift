@@ -24,6 +24,8 @@ protocol HealthKitService {
     func requestDataAccess() -> AnyPublisher<Health.AccessState, Never>
     
     func saveDrink(_ drink: CoffeeContainableDrink) -> AnyPublisher<Bool, Error>
+    
+    func fetchLast24HCaffeineConsumptionData() -> AnyPublisher<[ConsumedCaffeine], Error>
 }
 
 final class HealthKitManager: HealthKitService {
@@ -118,7 +120,7 @@ final class HealthKitManager: HealthKitService {
                 if let caffeineType = self.caffeineType,
                    let caloriesType = self.caloriesType {
                     let metadata: [String: Any] = [
-                        HKMetadataKeySyncIdentifier: drink.uuid,
+                        HKMetadataKeySyncIdentifier: UUID().uuidString,
                         HKMetadataKeySyncVersion: 1,
                         HKMetadataKeyTimeZone: TimeZone.current.identifier,
                         HKMetadataKeyWasUserEntered: NSNumber(booleanLiteral: false),
@@ -162,6 +164,78 @@ final class HealthKitManager: HealthKitService {
             }
         }
         .eraseToAnyPublisher()
+    }
+    
+    // MARK: - Fetch
+    
+    func fetchLast24HCaffeineConsumptionData() -> AnyPublisher<[ConsumedCaffeine], Error> {
+        Deferred {
+            Future { promise in
+                
+                // Create a predicate that only returns samples created within the last 24 hours
+                let endDate = Date()
+                let startDate = endDate.addingTimeInterval(-24.0 * 60.0 * 60.0)
+                let datePredicate = HKQuery.predicateForSamples(
+                    withStart: startDate,
+                    end: endDate,
+                    options:
+                        [
+                            .strictStartDate,
+                            .strictEndDate
+                        ]
+                )
+                
+                if let caffeineType = self.caffeineType {
+                    let query = HKSampleQuery(
+                        sampleType: caffeineType,
+                        predicate: datePredicate,
+                        limit: HKObjectQueryNoLimit,
+                        sortDescriptors: nil,
+                        resultsHandler: { (query, samples, error) in
+                            
+                            if let error = error {
+                                promise(.failure(error))
+                                return
+                            }
+                                                        
+                            let consumedCoffenineRecords: [ConsumedCaffeine] = samples?
+                                .compactMap({ $0 as? HKQuantitySample })
+                                .compactMap({
+                                    ConsumedCaffeine.from(sample: $0, unit: self.milligrams)
+                                })
+                                ?? []
+                            promise(.success(consumedCoffenineRecords))
+
+                        })
+                    
+                    self.healthStore.execute(query)
+                    
+                } else {
+                    promise(.failure(StoreFailure.objectTypeNotAvailable))
+                }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+}
+
+fileprivate extension ConsumedCaffeine {
+    
+    static func from(sample: HKQuantitySample, unit: HKUnit) -> ConsumedCaffeine {
+        let caffeineMg = sample.quantity.doubleValue(for: unit)
+        let drinkDate = sample.startDate
+        let uuid = sample.metadata?[HKMetadataKeySyncIdentifier] as? String ?? sample.uuid.uuidString
+        let drinkName = sample.metadata?[HKMetadataKeyFoodType] as? String
+        
+        let consumedCoffenine = ConsumedCaffeine(
+            caffeine: caffeineMg,
+            unit: "mg",
+            uuid: uuid,
+            drinkDate: drinkDate,
+            sourceName: drinkName
+        )
+        
+        return consumedCoffenine
     }
 }
 

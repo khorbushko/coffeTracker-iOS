@@ -29,17 +29,3 @@ extension CoffeeContainableDrink where Self: Equatable {
         lhs.uuid == rhs.uuid
     }
 }
-
-extension CoffeeContainableDrink {
-    
-    // Calculate the amount of caffeine remaining at the provided time,
-    // based on a 5-hour half life.
-    public func caffeineRemaining(at targetDate: Date) -> Double {
-        // calculate the number of half-life time periods (5-hour increments)
-        if let drinkDate = drinkDate {
-            let intervals = targetDate.timeIntervalSince(drinkDate) / (60.0 * 60.0 * 5.0)
-            return caffeine * pow(0.5, intervals)
-        }
-        return 0
-    }
-}

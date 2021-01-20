@@ -11,6 +11,14 @@ import Combine
 @testable import coffeTracker
 
 final class FakeHealthKitService: HealthKitService {
+    func saveDrink(_ drink: CoffeeContainableDrink) -> AnyPublisher<Bool, Error> {
+        fatalError()
+    }
+    
+    func fetchLast24HCaffeineConsumptionData() -> AnyPublisher<[ConsumedCaffeine], Error> {
+        fatalError()
+    }
+    
     
     var askDataAccessDone: Bool = true
     func shouldAskDataAccess() -> AnyPublisher<Bool, Never> {
